@@ -5,7 +5,7 @@
 import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import android.support.multidex.MultiDexApplication;
-
+import com.amazonaws.mobile.auth.userpools.CognitoUserPoolsSignInProvider;
 
 /**
  * Application class responsible for initializing singletons and other common components.
@@ -31,6 +31,10 @@ public class Application extends MultiDexApplication {
                     new IdentityManager(getApplicationContext(), awsConfiguration);
             IdentityManager.setDefaultIdentityManager(identityManager);
         }
+
+        // Add Cognito User Pools as Identity Provider
+        IdentityManager.getDefaultIdentityManager().addSignInProvider(
+                CognitoUserPoolsSignInProvider.class);
 
     }
 }

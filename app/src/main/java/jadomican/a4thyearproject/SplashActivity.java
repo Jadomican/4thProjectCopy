@@ -9,13 +9,18 @@ import android.view.View;
 import android.content.Context;
 import android.content.Intent;
 import com.amazonaws.mobile.config.AWSConfiguration;
+
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.amazonaws.mobile.auth.core.StartupAuthResultHandler;
 import com.amazonaws.mobile.auth.core.StartupAuthResult;
 import com.amazonaws.mobile.auth.userpools.CognitoUserPoolsSignInProvider;
-
 import com.amazonaws.mobile.auth.ui.AuthUIConfiguration;
 import com.amazonaws.mobile.auth.ui.SignInActivity;
+import com.amazonaws.mobile.auth.core.DefaultSignInResultHandler;
+import com.amazonaws.mobile.auth.core.IdentityProvider;
+import com.amazonaws.mobile.auth.core.StartupAuthErrorDetails;
+import com.amazonaws.mobile.auth.core.signin.AuthException;
+
 
 public class SplashActivity extends AppCompatActivity {
 
