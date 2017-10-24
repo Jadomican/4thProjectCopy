@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "jadomican.a4thyearproject"
         minSdkVersion 23
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -26,10 +26,15 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile('com.amazonaws:aws-android-sdk-auth-core:2.6.0@aar') { transitive = true; }
-    compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.amazonaws:aws-android-sdk-core:2.6.0'
-    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:support-v4:26.+'
+    compile ('com.amazonaws:aws-android-sdk-auth-userpools:2.6.+@aar') { transitive = true; }
+    // Dependencies for the SDK Sign-in prompt UI library
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile ('com.amazonaws:aws-android-sdk-auth-ui:2.6.+@aar') { transitive = true; }
+
     testCompile 'junit:junit:4.12'
 }
